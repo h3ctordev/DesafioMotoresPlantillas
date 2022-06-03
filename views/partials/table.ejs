@@ -1,0 +1,28 @@
+<% if (products.length === 0 ) {%>
+<div class="alert alert-warning rounded text-center m-4">
+  No se encontraron productos.
+</div>
+<% } else { %>
+<table class="table table-dark">
+  <tr class="text-light">
+    <th>Nombre</th>
+    <th>Precio</th>
+    <th>Foto URL</th>
+  </tr>
+  <% products.forEach( function(product) {%>
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= product.price %></td>
+    <td>
+      <div class="w-50 text-center mx-auto">
+        <img
+          src="<%= product.image %>"
+          alt="<%= product.name %>"
+          class="img-fluid rounded"
+        />
+      </div>
+    </td>
+  </tr>
+  <% }) %>
+</table>
+<% } %>
